@@ -1,0 +1,14 @@
+{
+    "version": "0.5",
+    "requires": [
+        "zlib/1.2.13#12b491771aa8105bca32bea4d34a392a%1690550201.947",
+        "libxml2/2.11.4#aa29921b43f43d017da9ddcd161b8c35%1692626045.296",
+        "gtest/1.14.0#a110ad735ec3df8d21666bcbc06161ed%1692626043.451"
+    ],
+    "build_requires": [
+        "pkgconf/1.9.3#459aa4c91b16f5c18562c3a84f339099%1690550196.921",
+        "ninja/1.11.1#de85db1490cc53d3353a536dadf1db50%1690550195.084",
+        "meson/1.0.0#5b11ab5aa05f47b3f46c882c8c20b1d7%1692603280.044"
+    ],
+    "python_requires": []
+}

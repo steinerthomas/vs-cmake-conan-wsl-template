@@ -6,7 +6,6 @@ import os
 
 class MyLibConan(ConanFile):
     name = "mylib"
-    #TODO use conan lockfiles with conan2
     requires = "libxml2/2.11.4",\
                "zlib/1.2.13"
     #generators = "CMakeToolchain", "CMakeDeps"
@@ -22,7 +21,6 @@ class MyLibConan(ConanFile):
         self.options["libxml2"].iconv = False
     
     def build_requirements(self):
-        #TODO use conan lockfiles with conan2
         self.test_requires("gtest/1.14.0")
 
     def build(self):
@@ -39,7 +37,7 @@ class MyLibConan(ConanFile):
     # this should be removed (standard generators)
     def generate(self):
         tc = CMakeToolchain(self)
-        tc.user_presets_path = False
+        tc.user_presets_path = False # this only works for conan v2, but is also described for conan v1
         # renaming to e.g. "ConanPresets.json" doesn't work aswell -> 2 files "ConanPresets.json" and "CMakeUserPresets.json" will be generated then
         tc.generate()
         deps = CMakeDeps(self)
