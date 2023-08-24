@@ -27,3 +27,5 @@ CXX=/usr/bin/$cxx_compiler
 LD=/usr/bin/ld
 STRIP=/usr/bin/strip
 
+[conf]
+tools.cmake.cmaketoolchain:user_toolchain = ["$standalone_toolchain/toolchain.cmake"]

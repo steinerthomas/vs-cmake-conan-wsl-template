@@ -4,9 +4,6 @@ This is a template project for a VisualStudio 2022 CMake project which is using 
 ## dependencies
 libxml2 and gtest
 
-## conan-cmake submodule
-conan-cmake is used
-
 ## conan configuration
 located in the `.conan` folder
 
@@ -22,6 +19,8 @@ located in the `.conan` folder
 ## Building with Visual Studio 2022 and WSL1
 
 ### Build and run tests under WSL
+- conan install: `conan install . --output-folder out/default -pr:h default -s build_type=Debug -pr:b=default`
+- remove generated CMakeUserPreset (use own CMakePresets.json for VS 2022): `rm CMakeUserPresets.json`
 - Select Connection/Target System: **WSL:Debian**
 - Select Configuration: **wsl-debug**
 - Select Startup Item (target): **MyLib_ut (bin\MyLib_ut)**
@@ -29,6 +28,8 @@ located in the `.conan` folder
   - Test will be executed on WSL with gbd
 
 ### Build and run tests on a remote machine with 32-bit
+- conan install: `conan install . --output-folder out/gcc8x86 -pr:h gcc8x86 -s build_type=Debug -pr:b=default`
+- remove generated CMakeUserPreset (use own CMakePresets.json for VS 2022): `rm CMakeUserPresets.json`
 - Select Connection/Target System: **WSL:Debian**
 - Select Configuration: **remote-debug**
 - Select Startup Item (target): **MyLib_ut (X Debug)**

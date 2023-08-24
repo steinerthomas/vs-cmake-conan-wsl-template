@@ -6,7 +6,7 @@
       "type": "cppgdb",
       "name": "MyLib_ut (X debug)",
       "project": "CMakeLists.txt",
-      "projectTarget": "MyLib_ut (bin\\MyLib_ut)",
+      "projectTarget": "MyLib_ut (tests\\MyLib_ut)",
       "comment": "Learn how to configure WSL debugging. See here for more info http://aka.ms/vslinuxdebug",
       "debuggerConfiguration": "gdb",
       "args": [],

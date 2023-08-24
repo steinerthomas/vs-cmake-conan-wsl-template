@@ -26,3 +26,6 @@ CC=$target_host-$cc_compiler
 CXX=$target_host-$cxx_compiler
 LD=$target_host-ld
 STRIP=$target_host-strip
+
+[conf]
+tools.cmake.cmaketoolchain:user_toolchain = ["$standalone_toolchain/toolchain.cmake"]
