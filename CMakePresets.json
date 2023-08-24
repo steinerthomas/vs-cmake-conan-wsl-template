@@ -1,0 +1,52 @@
+﻿{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 19,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "wsl-debug",
+      "hidden": false,
+      "description": "Build, debug and run on WSL1",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "environment": { "CMAKE_BUILD_PARALLEL_LEVEL": "8" },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+        "CONAN_PROFILE": "default"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Linux" ] },
+        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": { "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}" },
+        "intelliSenseMode": "linux-gcc-x64"
+      },
+      "warnings": { "uninitialized": true }
+    },
+    {
+      "name": "remote-debug",
+      "hidden": false,
+      "description": "Build on WSL1, remote debug and run on a linux 32-bit virtual machine (192.168.110.10)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "environment": {
+        "CMAKE_BUILD_PARALLEL_LEVEL": "8",
+        "REMOTE_DEBUG_MACHINE": "192.168.110.10"
+      },
+      "toolchainFile": "/opt/x-tools/i686-gcc8x86-linux-gnu/toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+        "CONAN_PROFILE": "gcc8x86"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Linux" ] },
+        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": { "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}" },
+        "intelliSenseMode": "linux-gcc-x86"
+      },
+      "warnings": { "uninitialized": true }
+    }
+  ]
+}
