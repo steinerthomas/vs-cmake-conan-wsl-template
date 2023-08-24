@@ -35,6 +35,16 @@ class MyLibConan(ConanFile):
     def layout(self):
         cmake_layout(self)
 
+    # according to https://docs.conan.io/1/reference/conanfile/tools/cmake/cmaketoolchain.html#user-presets-path this should prevent generating "CMakeUserPresets.json"
+    # this should be removed (standard generators)
+    def generate(self):
+        tc = CMakeToolchain(self)
+        tc.user_presets_path = False
+        # renaming to e.g. "ConanPresets.json" doesn't work aswell -> 2 files "ConanPresets.json" and "CMakeUserPresets.json" will be generated then
+        tc.generate()
+        deps = CMakeDeps(self)
+        deps.generate()
+
     def package(self):
         # simplified for showcase shared only
         copy(self, "*.h", join(self.source_folder, "include"), join(self.package_folder, "include"), keep_path=True)
