@@ -1,0 +1,31 @@
+{% set standalone_toolchain = "/tmp" %}
+#{% set target_host = "i686-gcc8x86-linux-gnu" %}
+{% set cc_compiler = "gcc" %}
+{% set cxx_compiler = "g++" %}
+
+[settings]
+arch=x86_64
+os=Linux
+compiler=gcc
+compiler.version=8
+compiler.libcxx=libstdc++11
+build_type=RelWithDebInfo
+
+[buildenv]
+CONAN_CMAKE_TOOLCHAIN_FILE=$standalone_toolchain/toolchain.cmake
+CONAN_CMAKE_FIND_ROOT_PATH=/
+CONAN_CMAKE_FIND_ROOT_PATH_MODE_PROGRAM="NEVER"
+CONAN_CMAKE_FIND_ROOT_PATH_MODE_LIBRARY="ONLY"
+CONAN_CMAKE_FIND_ROOT_PATH_MODE_INCLUDE="ONLY"
+PATH=[/bin]
+CHOST=/usr/bin/
+AR=/usr/bin/ar
+AS=/usr/bin/as
+RANLIB=/usr/bin/ranlib
+CC=/usr/bin/{{ cc_compiler }}
+CXX=/usr/bin/{{ cxx_compiler }}
+LD=/usr/bin/ld
+STRIP=/usr/bin/strip
+
+[conf]
+tools.cmake.cmaketoolchain:user_toolchain = ["{{ standalone_toolchain }}/toolchain.cmake"]

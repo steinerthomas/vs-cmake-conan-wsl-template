@@ -7,9 +7,9 @@ import os
 class MyLibConan(ConanFile):
     name = "mylib"
     #TODO use conan lockfiles with conan2
-    requires = "libxml2/2.9.12#8286b154e79f6e97c90c8fa34f2cbcb4",\
-               "zlib/1.2.12#c67ce17f2e96b972d42393ce50a76a1a"
-    generators = "CMakeToolchain", "CMakeDeps"
+    requires = "libxml2/2.11.4",\
+               "zlib/1.2.13"
+    #generators = "CMakeToolchain", "CMakeDeps"
     settings = "os", "compiler", "arch", "build_type"
     license = "MIT"
     exports_sources = "src/*", "include/*", "CMakeLists.txt", "tests/*"
@@ -23,7 +23,7 @@ class MyLibConan(ConanFile):
     
     def build_requirements(self):
         #TODO use conan lockfiles with conan2
-        self.test_requires("gtest/1.14.0#a110ad735ec3df8d21666bcbc06161ed")
+        self.test_requires("gtest/1.14.0")
 
     def build(self):
         cmake = CMake(self)

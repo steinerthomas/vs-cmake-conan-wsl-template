@@ -59,3 +59,14 @@ This toolchain is not publicly available. For the showcase a `toolchain.cmake` w
 cp toolchain.cmake /tmp/
 conan create . mylib/1.0.0@steiner/testing -u -pr:h showcase -s build_type=RelWithDebInfo -pr:b=default
 ```
+
+## Package/Build with conan v2
+
+### Build default profile
+`conan create . --version 2.0.0 --user steiner --channel testing -pr:h default -s build_type=RelWithDebInfo -pr:b=default --build=missing`
+
+### Cross build to 32 bit
+`conan create . --version 2.0.0 --user steiner --channel testing -pr:h gcc8x86 -s build_type=RelWithDebInfo -pr:b=default --build=missing`
+
+#### Showcase cross build
+`conan create . --version 2.0.0 --user steiner --channel testing -pr:h showcase -s build_type=RelWithDebInfo -pr:b=default --build=missing`
