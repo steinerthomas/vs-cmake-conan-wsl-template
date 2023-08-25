@@ -12,6 +12,7 @@ compiler.libcxx=libstdc++11
 build_type=RelWithDebInfo
 
 [buildenv]
+PATH=+(path){{ standalone_toolchain }}/bin
 CHOST={{ target_host }}
 AR={{ target_host }}-ar
 AS={{ target_host }}-as

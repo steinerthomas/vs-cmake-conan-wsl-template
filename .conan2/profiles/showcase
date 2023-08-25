@@ -12,6 +12,7 @@ compiler.libcxx=libstdc++11
 build_type=RelWithDebInfo
 
 [buildenv]
+PATH=+(path)/bin
 CHOST=/usr/bin/
 AR=/usr/bin/ar
 AS=/usr/bin/as
