@@ -8,7 +8,7 @@ class MyLibConan(ConanFile):
     name = "mylib"
     requires = "libxml2/2.11.4",\
                "zlib/1.2.13"
-    #generators = "CMakeToolchain", "CMakeDeps"
+    generators = "CMakeToolchain", "CMakeDeps"
     settings = "os", "compiler", "arch", "build_type"
     license = "MIT"
     exports_sources = "src/*", "include/*", "CMakeLists.txt", "tests/*"
@@ -33,13 +33,6 @@ class MyLibConan(ConanFile):
 
     def layout(self):
         cmake_layout(self)
-
-    def generate(self):
-        tc = CMakeToolchain(self)
-        tc.user_presets_path = False # this only works if standard generators are not used for conan v1 (with conan v2 error is printed)
-        tc.generate()
-        deps = CMakeDeps(self)
-        deps.generate()
 
     def package(self):
         # simplified for showcase shared only
