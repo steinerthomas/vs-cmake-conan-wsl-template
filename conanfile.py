@@ -15,6 +15,15 @@ class MyLibConan(ConanFile):
     description = "Showcase for VisualStudio 2022 cmake conan project with cross-compiling on wsl1."
     package_type = "library"
 
+    options = {
+        "shared": [True, False],
+        "fPIC": [True, False],
+    }
+    default_options = {
+        "shared": True, # simplified for showcase shared only
+        "fPIC": True,
+    }
+
     def configure(self):
         # simplified for showcase shared only
         self.options["libxml2"].shared = True

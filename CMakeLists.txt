@@ -4,8 +4,7 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 find_package(LibXml2 REQUIRED CONFIG)
 
-# simplified for showcase shared only
-add_library(MyLib SHARED)
+add_library(MyLib)
 
 target_sources(MyLib
     PRIVATE
