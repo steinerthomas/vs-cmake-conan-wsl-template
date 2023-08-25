@@ -13,6 +13,7 @@ class MyLibConan(ConanFile):
     license = "MIT"
     exports_sources = "src/*", "include/*", "CMakeLists.txt", "tests/*"
     description = "Showcase for VisualStudio 2022 cmake conan project with cross-compiling on wsl1."
+    package_type = "library"
 
     def configure(self):
         # simplified for showcase shared only
@@ -33,12 +34,9 @@ class MyLibConan(ConanFile):
     def layout(self):
         cmake_layout(self)
 
-    # according to https://docs.conan.io/1/reference/conanfile/tools/cmake/cmaketoolchain.html#user-presets-path this should prevent generating "CMakeUserPresets.json"
-    # this should be removed (standard generators)
     def generate(self):
         tc = CMakeToolchain(self)
-        tc.user_presets_path = False # this only works for conan v2, but is also described for conan v1
-        # renaming to e.g. "ConanPresets.json" doesn't work aswell -> 2 files "ConanPresets.json" and "CMakeUserPresets.json" will be generated then
+        tc.user_presets_path = False # this only works if standard generators are not used for conan v1 (with conan v2 error is printed)
         tc.generate()
         deps = CMakeDeps(self)
         deps.generate()
