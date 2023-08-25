@@ -12,11 +12,6 @@ compiler.libcxx=libstdc++11
 build_type=RelWithDebInfo
 
 [buildenv]
-CONAN_CMAKE_TOOLCHAIN_FILE=$standalone_toolchain/toolchain.cmake
-CONAN_CMAKE_FIND_ROOT_PATH=/
-CONAN_CMAKE_FIND_ROOT_PATH_MODE_PROGRAM="NEVER"
-CONAN_CMAKE_FIND_ROOT_PATH_MODE_LIBRARY="ONLY"
-CONAN_CMAKE_FIND_ROOT_PATH_MODE_INCLUDE="ONLY"
 CHOST=/usr/bin/
 AR=/usr/bin/ar
 AS=/usr/bin/as
