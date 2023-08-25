@@ -9,3 +9,6 @@
 conanbuildinfo.txt
 conaninfo.txt
 graph_info.json
+
+# for conan v1 lockfiles should be ignored:
+#conan.lock
