@@ -17,7 +17,6 @@ CONAN_CMAKE_FIND_ROOT_PATH={{ standalone_toolchain }}/{{ target_host }}/sysroot
 CONAN_CMAKE_FIND_ROOT_PATH_MODE_PROGRAM="NEVER"
 CONAN_CMAKE_FIND_ROOT_PATH_MODE_LIBRARY="ONLY"
 CONAN_CMAKE_FIND_ROOT_PATH_MODE_INCLUDE="ONLY"
-PATH=[{{ standalone_toolchain }}/bin]
 CHOST={{ target_host }}
 AR={{ target_host }}-ar
 AS={{ target_host }}-as
