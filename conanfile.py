@@ -8,21 +8,11 @@ class MyLibConan(ConanFile):
     name = "mylib"
     requires = "libxml2/2.11.4",\
                "zlib/1.2.13"
-    generators = "CMakeToolchain", "CMakeDeps"
     settings = "os", "compiler", "arch", "build_type"
     license = "MIT"
     exports_sources = "src/*", "include/*", "CMakeLists.txt", "tests/*"
     description = "Showcase for VisualStudio 2022 cmake conan project with cross-compiling on wsl1."
-    package_type = "library"
-
-    options = {
-        "shared": [True, False],
-        "fPIC": [True, False],
-    }
-    default_options = {
-        "shared": True, # simplified for showcase shared only
-        "fPIC": True,
-    }
+    package_type = "shared-library" # simplified for showcase shared only
 
     def configure(self):
         # simplified for showcase shared only
