@@ -8,6 +8,7 @@ class MyLibConan(ConanFile):
     name = "mylib"
     requires = "libxml2/2.11.4",\
                "zlib/1.2.13"
+    generators = "CMakeToolchain", "CMakeDeps"
     settings = "os", "compiler", "arch", "build_type"
     license = "MIT"
     exports_sources = "src/*", "include/*", "CMakeLists.txt", "tests/*"
