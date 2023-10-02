@@ -24,7 +24,7 @@ located in the `.conan` folder
 - Select Configuration: **wsl-debug**
 - Select Startup Item (target): **MyLib_ut (bin\MyLib_ut)**
 - Debug (hit F5)
-  - Test will be executed on WSL with gbd
+  - Test will be executed on WSL with gdb
 
 ### Build and run tests on a remote machine with 32-bit
 - conan install: `conan install . --output-folder out/cube3210 -pr:h cube3210 -s build_type=Debug -pr:b=default`
