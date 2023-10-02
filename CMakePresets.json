@@ -35,11 +35,11 @@
         "CMAKE_BUILD_PARALLEL_LEVEL": "8",
         "REMOTE_DEBUG_MACHINE": "192.168.110.10"
       },
-      "toolchainFile": "/opt/x-tools/i686-gcc8x86-linux-gnu/toolchain.cmake",
+      "toolchainFile": "/opt/x-tools/i686-cube3210-linux-gnu/toolchain.cmake",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-        "CONAN_PROFILE": "gcc8x86"
+        "CONAN_PROFILE": "cube3210"
       },
       "vendor": {
         "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Linux" ] },

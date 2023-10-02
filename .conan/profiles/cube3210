@@ -1,5 +1,5 @@
-standalone_toolchain=/opt/x-tools/i686-gcc8x86-linux-gnu
-target_host=i686-gcc8x86-linux-gnu
+standalone_toolchain=/opt/x-tools/i686-cube3210-linux-gnu
+target_host=i686-cube3210-linux-gnu
 cc_compiler=gcc
 cxx_compiler=g++
 

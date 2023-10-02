@@ -16,7 +16,7 @@ SET(THREADS_PTHREAD_ARG "2" CACHE STRING "Forcibly set by toolchain.cmake." FORC
 
 # specify the cross compiler
 # for showcase the system ones are used - in the real toolchain the paths are:
-# e.g. "/opt/x-tools/i686-gcc8x86-linux-gnu/bin/i686-gcc8x86-linux-gnu-gcc", "/opt/x-tools/i686-gcc8x86-linux-gnu/i686-gcc8x86-linux-gnu/sysroot/", ...
+# e.g. "/opt/x-tools/i686-cube3210-linux-gnu/bin/i686-cube3210-linux-gnu-gcc", "/opt/x-tools/i686-cube3210-linux-gnu/i686-cube3210-linux-gnu/sysroot/", ...
 set(CMAKE_C_COMPILER "/usr/bin/i686-linux-gnu-gcc" CACHE STRING "C compiler")
 set(CMAKE_CXX_COMPILER "/usr/bin/i686-linux-gnu-g++" CACHE STRING "C++ compiler")
 # Name of archiving tool for static libraries
