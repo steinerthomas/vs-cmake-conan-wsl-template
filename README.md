@@ -4,9 +4,6 @@ This is a template project for a VisualStudio 2022 CMake project which is using 
 ## dependencies
 libxml2 and gtest
 
-## conan-cmake submodule
-conan-cmake is used
-
 ## conan configuration
 located in the `.conan` folder
 
@@ -22,13 +19,15 @@ located in the `.conan` folder
 ## Building with Visual Studio 2022 and WSL1
 
 ### Build and run tests under WSL
+- conan install: `conan install . --output-folder out/default -pr:h default -s build_type=Debug -pr:b=default`
 - Select Connection/Target System: **WSL:Debian**
 - Select Configuration: **wsl-debug**
 - Select Startup Item (target): **MyLib_ut (bin\MyLib_ut)**
 - Debug (hit F5)
-  - Test will be executed on WSL with gbd
+  - Test will be executed on WSL with gdb
 
 ### Build and run tests on a remote machine with 32-bit
+- conan install: `conan install . --output-folder out/cube3210 -pr:h cube3210 -s build_type=Debug -pr:b=default`
 - Select Connection/Target System: **WSL:Debian**
 - Select Configuration: **remote-debug**
 - Select Startup Item (target): **MyLib_ut (X Debug)**
@@ -57,4 +56,18 @@ This toolchain is not publicly available. For the showcase a `toolchain.cmake` w
 ```
 cp toolchain.cmake /tmp/
 conan create . mylib/1.0.0@steiner/testing -u -pr:h showcase -s build_type=RelWithDebInfo -pr:b=default
+```
+
+## Package/Build with conan v2
+
+### Build default profile
+`conan create . --version 2.0.0 --user steiner --channel testing -pr:h default -s build_type=RelWithDebInfo -pr:b=default --build=missing`
+
+### Cross build to 32 bit
+`conan create . --version 2.0.0 --user steiner --channel testing -pr:h cube3210 -s build_type=RelWithDebInfo -pr:b=default --build=missing`
+
+#### Showcase cross build
+```
+cp toolchain.cmake /tmp/
+conan create . --version 2.0.0 --user steiner --channel testing -pr:h showcase -s build_type=RelWithDebInfo -pr:b=default --build=missing
 ```
