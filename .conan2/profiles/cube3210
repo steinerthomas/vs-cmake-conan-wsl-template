@@ -1,5 +1,5 @@
-{% set standalone_toolchain = "/opt/x-tools/i686-gcc8x86-linux-gnu" %}
-{% set target_host = "i686-gcc8x86-linux-gnu" %}
+{% set standalone_toolchain = "/opt/x-tools/i686-cube3210-linux-gnu" %}
+{% set target_host = "i686-cube3210-linux-gnu" %}
 {% set cc_compiler = "gcc" %}
 {% set cxx_compiler = "g++" %}
 

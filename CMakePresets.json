@@ -35,7 +35,29 @@
         "CMAKE_BUILD_PARALLEL_LEVEL": "8",
         "REMOTE_DEBUG_MACHINE": "192.168.110.10"
       },
-      "toolchainFile": "${sourceDir}/out/gcc8x86/build/Debug/generators/conan_toolchain.cmake",
+      "toolchainFile": "${sourceDir}/out/cube3210/build/Debug/generators/conan_toolchain.cmake",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
+      },
+      "vendor": {
+        "microsoft.com/VisualStudioSettings/CMake/1.0": { "hostOS": [ "Linux" ] },
+        "microsoft.com/VisualStudioRemoteSettings/CMake/1.0": { "sourceDir": "$env{HOME}/.vs/$ms{projectDirName}" },
+        "intelliSenseMode": "linux-gcc-x86"
+      },
+      "warnings": { "uninitialized": true }
+    },
+    {
+      "name": "remote-debug-showcase",
+      "hidden": false,
+      "description": "Build on WSL1, remote debug and run on a linux 32-bit virtual machine (192.168.110.10)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "environment": {
+        "CMAKE_BUILD_PARALLEL_LEVEL": "8",
+        "REMOTE_DEBUG_MACHINE": "192.168.110.10"
+      },
+      "toolchainFile": "${sourceDir}/out/showcase/build/Debug/generators/conan_toolchain.cmake",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"

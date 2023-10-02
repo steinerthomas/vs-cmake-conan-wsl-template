@@ -1,10 +1,10 @@
-{% set standalone_toolchain = "/tmp" %}
-#{% set target_host = "i686-gcc8x86-linux-gnu" %}
+{% set standalone_toolchain = "/usr/i686-linux-gnu/" %}
+{% set target_host = "i686-linux-gnu" %}
 {% set cc_compiler = "gcc" %}
 {% set cxx_compiler = "g++" %}
 
 [settings]
-arch=x86_64
+arch=x86
 os=Linux
 compiler=gcc
 compiler.version=8
@@ -12,15 +12,15 @@ compiler.libcxx=libstdc++11
 build_type=RelWithDebInfo
 
 [buildenv]
-PATH=+(path)/bin
-CHOST=/usr/bin/
-AR=/usr/bin/ar
-AS=/usr/bin/as
-RANLIB=/usr/bin/ranlib
-CC=/usr/bin/{{ cc_compiler }}
-CXX=/usr/bin/{{ cxx_compiler }}
-LD=/usr/bin/ld
-STRIP=/usr/bin/strip
+PATH=+(path){{ standalone_toolchain }}/bin
+CHOST={{ target_host }}
+AR={{ target_host }}-ar
+AS={{ target_host }}-as
+RANLIB={{ target_host }}-ranlib
+CC={{ target_host }}-{{ cc_compiler }}
+CXX={{ target_host }}-{{ cxx_compiler }}
+LD={{ target_host }}-ld
+STRIP={{ target_host }}-strip
 
 [conf]
-tools.cmake.cmaketoolchain:user_toolchain = ["{{ standalone_toolchain }}/toolchain.cmake"]
+tools.cmake.cmaketoolchain:user_toolchain = ["/tmp/toolchain.cmake"]
