@@ -14,8 +14,9 @@ else() # in user space
 		UPDATE
 		BASIC_SETUP
         CMAKE_TARGETS
-        BUILD never
+        BUILD missing
 		PROFILE ${CONAN_PROFILE}
+        PROFILE_BUILD default
         PROFILE_AUTO ALL
 	)
 endif()
