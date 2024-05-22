@@ -11,7 +11,7 @@
       "debuggerConfiguration": "gdb",
       "args": [],
       "env": {
-        "LD_LIBRARY_PATH": "/tmp/lib"
+        "LD_LIBRARY_PATH": "/.vs/lib"
       },
       "remoteMachineName": "${env.REMOTE_DEBUG_MACHINE}",
       "deploy": [
@@ -19,7 +19,7 @@
           "deploymentType": "LocalRemote",
           "targetMachine": "${env.REMOTE_DEBUG_MACHINE}",
           "sourcePath": "${workspaceRoot}/out/build/remote-debug/lib/", //deploy .so to remote machine
-          "targetPath": "/tmp/lib"
+          "targetPath": "/.vs/lib"
         }
       ]
     },
@@ -32,7 +32,7 @@
       "debuggerConfiguration": "gdb",
       "args": [],
       "env": {
-        "LD_LIBRARY_PATH": "/tmp/lib"
+        "LD_LIBRARY_PATH": "/.vs/lib"
       },
       "remoteMachineName": "${env.REMOTE_DEBUG_MACHINE}",
       "deploy": [
@@ -40,7 +40,7 @@
           "deploymentType": "LocalRemote",
           "targetMachine": "${env.REMOTE_DEBUG_MACHINE}",
           "sourcePath": "${workspaceRoot}/out/build/remote-debug-showcase/lib/", //deploy .so to remote machine
-          "targetPath": "/tmp/lib"
+          "targetPath": "/.vs/lib"
         }
       ]
     }
