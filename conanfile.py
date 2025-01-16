@@ -11,7 +11,7 @@ class MyLibConan(ConanFile):
     settings = "os", "compiler", "arch", "build_type"
     license = "MIT"
     exports_sources = "src/*", "include/*", "CMakeLists.txt", "tests/*"
-    description = "Showcase for VisualStudio 2022 cmake conan project with cross-compiling on wsl1."
+    description = "Showcase for VisualStudio 2022 cmake conan project with cross-compiling on wsl2."
 
     def configure(self):
         # simplified for showcase shared only

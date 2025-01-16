@@ -6,7 +6,7 @@
       "type": "cppgdb",
       "name": "MyLib_ut (X debug)",
       "project": "CMakeLists.txt",
-      "projectTarget": "MyLib_ut (bin\\MyLib_ut)",
+      "projectTarget": "MyLib_ut",
       "comment": "Learn how to configure WSL debugging. See here for more info http://aka.ms/vslinuxdebug",
       "debuggerConfiguration": "gdb",
       "args": [],
@@ -16,30 +16,9 @@
       "remoteMachineName": "${env.REMOTE_DEBUG_MACHINE}",
       "deploy": [
         {
-          "deploymentType": "LocalRemote",
+          "deploymentType": "RemoteRemote",
           "targetMachine": "${env.REMOTE_DEBUG_MACHINE}",
-          "sourcePath": "${workspaceRoot}/out/build/remote-debug/lib/", //deploy .so to remote machine
-          "targetPath": "/.vs/lib"
-        }
-      ]
-    },
-    {
-      "type": "cppgdb",
-      "name": "MyLib_ut (X debug showcase)",
-      "project": "CMakeLists.txt",
-      "projectTarget": "MyLib_ut (bin\\MyLib_ut)",
-      "comment": "Learn how to configure WSL debugging. See here for more info http://aka.ms/vslinuxdebug",
-      "debuggerConfiguration": "gdb",
-      "args": [],
-      "env": {
-        "LD_LIBRARY_PATH": "/.vs/lib"
-      },
-      "remoteMachineName": "${env.REMOTE_DEBUG_MACHINE}",
-      "deploy": [
-        {
-          "deploymentType": "LocalRemote",
-          "targetMachine": "${env.REMOTE_DEBUG_MACHINE}",
-          "sourcePath": "${workspaceRoot}/out/build/remote-debug-showcase/lib/", //deploy .so to remote machine
+          "sourcePath": "${cmake.binaryDir}/lib/", //deploy .so to remote machine
           "targetPath": "/.vs/lib"
         }
       ]
