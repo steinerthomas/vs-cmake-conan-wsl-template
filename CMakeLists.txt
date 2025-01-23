@@ -24,6 +24,9 @@ endif()
 # simplified for showcase shared only
 add_library(MyLib SHARED)
 
+set(HELLO_MESSAGE "Hello world from cmake!")
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Constants.gen.h.in ${CMAKE_CURRENT_SOURCE_DIR}/src/Constants.gen.h)
+
 target_sources(MyLib
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/MyLib.cpp

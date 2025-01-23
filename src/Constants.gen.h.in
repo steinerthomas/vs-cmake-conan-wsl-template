@@ -1,0 +1,5 @@
+#pragma once
+
+namespace mylib {
+   static constexpr auto* HELLO_MESSAGE = "${HELLO_MESSAGE}";
+}
