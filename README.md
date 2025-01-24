@@ -5,7 +5,7 @@ This is a template project for a VisualStudio 2022 CMake project which is using 
 libxml2 and gtest
 
 ## conan-cmake submodule
-conan-cmake is used
+`git submodule update --init --recursive` conan-cmake is used
 
 ## conan version
 `pip install conan==1.61.0`
