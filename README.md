@@ -8,11 +8,11 @@ libxml2 and gtest
 `git submodule update --init --recursive` conan-cmake is used
 
 ## conan version
-`pip install conan==1.61.0`
-https://pypi.org/project/conan/1.61.0/
+`pip install conan==1.66.0`
+[https://pypi.org/project/conan/1.61.0/](https://pypi.org/project/conan/1.66.0/)
 
 ## conan configuration
-located in the `.conan` folder
+config and profiles and are located in the `.conan` folder
 
 # Goal
 
@@ -42,8 +42,7 @@ located in the `.conan` folder
   - Test will be executed on target machine with gbd
 
 ## Package/Build with conan v1
-
-`conan profile detect`
+`conan profile new default --detect`
 `conan config install .conan`
 
 ### Build for WSL
