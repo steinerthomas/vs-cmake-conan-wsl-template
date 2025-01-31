@@ -1,4 +1,5 @@
 ﻿#include "mylib/MyLib.h"
+#include "Constants.gen.h"
 #include <iostream>
 
 //libxml2 - just for showcase
@@ -59,7 +60,7 @@ bool mylib::helloWorld(bool printXmlDoc) {
       xmlMemoryDump();
    }
    else {
-      std::cout << "Hello world!\n";
+      std::cout << HELLO_MESSAGE << "\n";
    }
    return printXmlDoc;
 }
