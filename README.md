@@ -1,5 +1,5 @@
 # Project structure
-This is a template project for a VisualStudio 2022 CMake project which is using conan v1 for dependecies and packaging a library. It is possible to build for linux WSL1, run and debug tests on WSL1 or a remote 32-bit machine (cross build and debug). 
+This is a template project for a VisualStudio 2022 CMake project which is using conan v1 for dependencies and packaging a library. It is possible to build for linux WSL2, run and debug tests on WSL2 or a remote 32-bit machine (cross build and debug). 
 
 ## dependencies
 libxml2 and gtest
@@ -23,12 +23,12 @@ config and profiles and are located in the `.conan` folder
 
 # Building
 
-## Building with Visual Studio 2022 and WSL1
+## Building with Visual Studio 2022 and WSL2
 
 ### Build and run tests under WSL
 - Select Connection/Target System: **WSL:Debian**
 - Select Configuration: **wsl-debug**
-- Select Startup Item (target): **MyLib_ut (bin\MyLib_ut)**
+- Select Startup Item (target): **MyLib_ut**
 - Debug (hit F5)
   - Test will be executed on WSL with gbd
 
@@ -38,8 +38,8 @@ config and profiles and are located in the `.conan` folder
 - Select Startup Item (target): **MyLib_ut (X Debug)**
   - described in **launch.vs.json** file
 - Debug (hit F5)
-  - All extecutables and libs get copied to the target machine
-  - Test will be executed on target machine with gbd
+  - All executables and libs get copied to the target machine
+  - Test will be executed on target machine with gdb
 
 ## Package/Build with conan v1
 `conan profile new default --detect`
