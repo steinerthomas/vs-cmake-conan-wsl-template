@@ -23,7 +23,7 @@ config and profiles and are located in the `.conan` folder
 ## Building with Visual Studio 2022 and WSL2
 
 ### Build and run tests under WSL
-- conan install: `conan install . --output-folder out/default -pr:h default -s build_type=Debug -pr:b=default`
+- conan install: `conan install . --output-folder out/default -pr:h default -s build_type=Debug -pr:b=default --build missing`
 - Select Connection/Target System: **WSL:Debian**
 - Select Configuration: **wsl-debug**
 - Select Startup Item (target): **MyLib_ut**
@@ -31,7 +31,7 @@ config and profiles and are located in the `.conan` folder
   - Test will be executed on WSL with gdb
 
 ### Build and run tests on a remote machine with 32-bit
-- conan install: `conan install . --output-folder out/cube3210 -pr:h cube3210 -s build_type=Debug -pr:b=default`
+- conan install: `conan install . --output-folder out/cube3210 -pr:h cube3210 -s build_type=Debug -pr:b=default --build missing`
 - Select Connection/Target System: **WSL:Debian**
 - Select Configuration: **remote-debug**
 - Select Startup Item (target): **MyLib_ut (X Debug)**

@@ -7,11 +7,11 @@ FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
      && apt-get -y install --no-install-recommends pip g++-i686-linux-gnu
 
-ADD .conan /home/vscode/.conan
-RUN pip install conan==1.66.0 \
-     && conan profile new default --detect \
-     && cp /root/.conan/profiles/default /home/vscode/.conan/profiles/default \
-     && sudo chown -R vscode:vscode /home/vscode/.conan
+ADD .conan2 /home/vscode/.conan2
+RUN pip install conan==2.12.1 \
+     && conan profile detect \
+     && cp /root/.conan2/profiles/default /home/vscode/.conan2/profiles/default \
+     && sudo chown -R vscode:vscode /home/vscode/.conan2
 
 COPY resources/toolchains/engel-toolchain-cube3210-i686_1.26.0+rc1_amd64.deb .
 RUN dpkg -i engel-toolchain-cube3210-i686_1.26.0+rc1_amd64.deb
