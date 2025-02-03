@@ -58,7 +58,6 @@ The toolchain is available in: `/opt/x-tools/i686-cube3210-linux-gnu/toolchain.c
 For the showcase a `toolchain.cmake` was created, which uses the debian i686 cross compiler `apt install g++-i686-linux-gnu`.
 
 ```
-cp toolchain.cmake /tmp/
 conan create . mylib/1.0.0@steiner/testing -u -pr:h showcase -s build_type=RelWithDebInfo -pr:b=default
 ```
 
