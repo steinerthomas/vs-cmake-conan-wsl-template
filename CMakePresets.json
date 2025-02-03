@@ -50,7 +50,7 @@
         "CMAKE_BUILD_PARALLEL_LEVEL": "8",
         "REMOTE_DEBUG_MACHINE": "192.168.110.10"
       },
-      "toolchainFile": "/tmp/toolchain.cmake",
+      "toolchainFile": "${sourceDir}/toolchain.cmake",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
