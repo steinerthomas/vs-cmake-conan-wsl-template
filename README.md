@@ -41,7 +41,7 @@ config and profiles and are located in the `.conan` folder
   - Test will be executed on target machine with gdb
 
 ## Package/Build with conan v1
-`conan profile new default --detect`
+`conan profile detect`
 `conan config install .conan`
 
 ### Build for WSL
