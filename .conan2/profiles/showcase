@@ -24,4 +24,4 @@ LD={{ target_host }}-ld
 STRIP={{ target_host }}-strip
 
 [conf]
-tools.cmake.cmaketoolchain:user_toolchain = ["/tmp/toolchain.cmake"]
+tools.cmake.cmaketoolchain:user_toolchain = ["/opt/x-tools/toolchain.cmake"]

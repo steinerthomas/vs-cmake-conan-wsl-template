@@ -16,4 +16,6 @@ RUN pip install conan==2.12.1 \
 COPY resources/toolchains/engel-toolchain-cube3210-i686_1.26.0+rc1_amd64.deb .
 RUN dpkg -i engel-toolchain-cube3210-i686_1.26.0+rc1_amd64.deb
 
+COPY toolchain.cmake /opt/x-tools/
+
 RUN curl -s https://cmake.org/files/v3.31/cmake-3.31.5-linux-x86_64.tar.gz | tar --strip-components=1 -xz -C /usr/local
