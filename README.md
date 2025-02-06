@@ -71,6 +71,7 @@ conan create . mylib/1.0.0@steiner/testing -u -pr:h showcase -s build_type=RelWi
 
 #### Showcase cross build
 ```
-cp toolchain.cmake /tmp/
+mkdir -p /opt/x-tools/
+cp toolchain.cmake /opt/x-tools/
 conan create . --version 2.0.0 --user steiner --channel testing -pr:h showcase -s build_type=RelWithDebInfo -pr:b=default --build=missing
 ```
