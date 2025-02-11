@@ -4,7 +4,8 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 
 find_package(LibXml2 REQUIRED CONFIG)
 
-add_library(MyLib)
+# simplified for showcase shared only
+add_library(MyLib SHARED)
 
 set(HELLO_MESSAGE "Hello world from cmake!")
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Constants.gen.h.in ${CMAKE_CURRENT_SOURCE_DIR}/src/Constants.gen.h)
