@@ -18,8 +18,8 @@
         {
           "deploymentType": "RemoteRemote",
           "targetMachine": "${env.REMOTE_DEBUG_MACHINE}",
-          "sourcePath": "${cmake.binaryDir}/lib/", //deploy .so to remote machine
-          "targetPath": "/.vs/lib"
+          "sourcePath": "${cmake.binaryDir}/libMyLib.so", //deploy .so to remote machine
+          "targetPath": "/.vs/lib/libMyLib.so"
         }
       ]
     }
