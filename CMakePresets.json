@@ -12,7 +12,7 @@
       "description": "Build, debug and run on WSL2",
       "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
-      "environment": { "CMAKE_BUILD_PARALLEL_LEVEL": "8" },
+      "environment": { "CMAKE_BUILD_PARALLEL_LEVEL": "" },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
         "CONAN_INSTALL_ARGS": "-sbuild_type=Debug;--build=missing",
@@ -29,7 +29,7 @@
       "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "environment": {
-        "CMAKE_BUILD_PARALLEL_LEVEL": "8",
+        "CMAKE_BUILD_PARALLEL_LEVEL": "",
         "REMOTE_DEBUG_MACHINE": "192.168.110.10"
       },
       "cacheVariables": {
@@ -49,7 +49,7 @@
       "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "environment": {
-        "CMAKE_BUILD_PARALLEL_LEVEL": "8",
+        "CMAKE_BUILD_PARALLEL_LEVEL": "",
         "REMOTE_DEBUG_MACHINE": "192.168.110.10"
       },
       "cacheVariables": {
