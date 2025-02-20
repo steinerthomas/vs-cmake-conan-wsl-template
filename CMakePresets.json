@@ -2,7 +2,7 @@
   "version": 3,
   "cmakeMinimumRequired": {
     "major": 3,
-    "minor": 19,
+    "minor": 24,
     "patch": 0
   },
   "configurePresets": [
@@ -12,11 +12,15 @@
       "description": "Build, debug and run on WSL2",
       "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
-      "environment": { "CMAKE_BUILD_PARALLEL_LEVEL": "8" },
+      "environment": { "CMAKE_BUILD_PARALLEL_LEVEL": "" },
+      // remove when using conan_provider.cmake
+      "toolchainFile": "${sourceDir}/out/build/${presetName}/build/Debug/generators/conan_toolchain.cmake",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-        "CONAN_PROFILE": "default"
+        "CONAN_INSTALL_ARGS": "-sbuild_type=Debug;--build=missing",
+        "CMAKE_PROJECT_INCLUDE_BEFORE": "$env{HOME}/.conan2/extensions/cmake/conan_install.cmake",
+        //"CMAKE_PROJECT_TOP_LEVEL_INCLUDES": "${sourceDir}/cmake-conan/conan_provider.cmake",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
       },
       "vendor": { "microsoft.com/VisualStudioRemoteSettings/CMake/2.0": { "remoteSourceRootDir": "$env{HOME}/.vs/$ms{projectDirName}" } },
       "warnings": { "uninitialized": true }
@@ -28,14 +32,18 @@
       "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "environment": {
-        "CMAKE_BUILD_PARALLEL_LEVEL": "8",
+        "CMAKE_BUILD_PARALLEL_LEVEL": "",
         "REMOTE_DEBUG_MACHINE": "192.168.110.10"
       },
-      "toolchainFile": "/opt/x-tools/i686-cube3210-linux-gnu/toolchain.cmake",
+      // remove when using conan_provider.cmake
+      "toolchainFile": "${sourceDir}/out/build/${presetName}/build/Debug/generators/conan_toolchain.cmake",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-        "CONAN_PROFILE": "cube3210"
+        "CONAN_HOST_PROFILE": "cube3210",
+        "CONAN_INSTALL_ARGS": "-sbuild_type=Debug;--build=missing",
+        "CMAKE_PROJECT_INCLUDE_BEFORE": "$env{HOME}/.conan2/extensions/cmake/conan_install.cmake",
+        //"CMAKE_PROJECT_TOP_LEVEL_INCLUDES": "${sourceDir}/cmake-conan/conan_provider.cmake",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
       },
       "vendor": { "microsoft.com/VisualStudioRemoteSettings/CMake/2.0": { "remoteSourceRootDir": "$env{HOME}/.vs/$ms{projectDirName}" } },
       "warnings": { "uninitialized": true }
@@ -47,14 +55,18 @@
       "generator": "Unix Makefiles",
       "binaryDir": "${sourceDir}/out/build/${presetName}",
       "environment": {
-        "CMAKE_BUILD_PARALLEL_LEVEL": "8",
+        "CMAKE_BUILD_PARALLEL_LEVEL": "",
         "REMOTE_DEBUG_MACHINE": "192.168.110.10"
       },
-      "toolchainFile": "${sourceDir}/toolchain.cmake",
+      // remove when using conan_provider.cmake
+      "toolchainFile": "${sourceDir}/out/build/${presetName}/build/Debug/generators/conan_toolchain.cmake",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
-        "CONAN_PROFILE": "showcase"
+        "CONAN_HOST_PROFILE": "showcase",
+        "CONAN_INSTALL_ARGS": "-sbuild_type=Debug;--build=missing",
+        "CMAKE_PROJECT_INCLUDE_BEFORE": "$env{HOME}/.conan2/extensions/cmake/conan_install.cmake",
+        //"CMAKE_PROJECT_TOP_LEVEL_INCLUDES": "${sourceDir}/cmake-conan/conan_provider.cmake",
+        "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}"
       },
       "vendor": { "microsoft.com/VisualStudioRemoteSettings/CMake/2.0": { "remoteSourceRootDir": "$env{HOME}/.vs/$ms{projectDirName}" } },
       "warnings": { "uninitialized": true }

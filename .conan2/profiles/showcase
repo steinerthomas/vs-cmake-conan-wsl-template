@@ -1,0 +1,27 @@
+{% set standalone_toolchain = "/usr/i686-linux-gnu/" %}
+{% set target_host = "i686-linux-gnu" %}
+{% set cc_compiler = "gcc" %}
+{% set cxx_compiler = "g++" %}
+
+[settings]
+arch=x86
+os=Linux
+compiler=gcc
+compiler.version=8
+compiler.libcxx=libstdc++11
+compiler.cppstd=17
+build_type=RelWithDebInfo
+
+[buildenv]
+PATH=+(path){{ standalone_toolchain }}/bin
+CHOST={{ target_host }}
+AR={{ target_host }}-ar
+AS={{ target_host }}-as
+RANLIB={{ target_host }}-ranlib
+CC={{ target_host }}-{{ cc_compiler }}
+CXX={{ target_host }}-{{ cxx_compiler }}
+LD={{ target_host }}-ld
+STRIP={{ target_host }}-strip
+
+[conf]
+tools.cmake.cmaketoolchain:user_toolchain = ["/opt/x-tools/toolchain.cmake"]
