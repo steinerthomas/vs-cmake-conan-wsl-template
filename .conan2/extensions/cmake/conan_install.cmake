@@ -1,0 +1,9 @@
+set(CONAN_HOST_PROFILE "default" CACHE STRING "conan host profile")
+set(CONAN_BUILD_PROFILE "default" CACHE STRING "conan build profile")
+
+message (STATUS "conan install ${CMAKE_SOURCE_DIR} -u -pr:h ${CONAN_HOST_PROFILE} -pr:b ${CONAN_BUILD_PROFILE} -s build_type=${CMAKE_BUILD_TYPE} -of ${CMAKE_BINARY_DIR} ${CONAN_INSTALL_ARGS}")
+execute_process(
+	COMMAND conan install ${CMAKE_SOURCE_DIR} -u -pr:h ${CONAN_HOST_PROFILE} -pr:b ${CONAN_BUILD_PROFILE} -s build_type=${CMAKE_BUILD_TYPE} -of ${CMAKE_BINARY_DIR} ${CONAN_INSTALL_ARGS}
+	WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+	RESULT_VARIABLE CONAN_INSTALL_RESULT
+)
