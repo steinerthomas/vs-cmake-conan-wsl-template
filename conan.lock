@@ -1,0 +1,15 @@
+{
+    "version": "0.5",
+    "requires": [
+        "zlib/1.2.13",
+        "libxml2/2.11.4",
+        "gtest/1.14.0"
+    ],
+    "build_requires": [
+        "pkgconf/1.9.3",
+        "ninja/1.11.1",
+        "meson/1.0.0"
+    ],
+    "python_requires": [],
+    "config_requires": []
+}
