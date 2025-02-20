@@ -32,6 +32,7 @@ config and profiles and are located in the `.conan2` folder
   - Test will be executed on target machine with gdb
 
 ## Package/Build with conan v2
+conan.lock has no revisions just for showcase
 
 ### Build default profile
 `conan create . --version 2.0.0 --user steiner --channel testing -pr:h default -s build_type=RelWithDebInfo -pr:b=default --build=missing`
