@@ -22,7 +22,7 @@ target_link_libraries(MyLib
 )
 
 install(TARGETS MyLib COMPONENT CONAN)
-install(DIRECTORY include/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR} COMPONENT CONAN)
+install(DIRECTORY include/ DESTINATION include COMPONENT CONAN)
 
 # tests
 enable_testing()
