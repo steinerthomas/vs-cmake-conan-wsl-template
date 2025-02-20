@@ -1,15 +1,15 @@
 {
-  "version": "0.5",
-  "requires": [
-    "zlib/1.2.13#fb5cf5f28601b7e4391fdac28352ab0f%1733936249.91",
-    "libxml2/2.11.4#1df551f7f0d2010fd935b910dff099ea%1726875230.553",
-    "gtest/1.14.0#25e2a474b4d1aecf5ff4f0555dcdf72c%1715096213.863"
-  ],
-  "build_requires": [
-    "pkgconf/2.1.0#27f44583701117b571307cf5b5fe5605%1701537936.436",
-    "ninja/1.12.1#fd583651bf0c6a901943495d49878803%1724079877.609",
-    "meson/1.2.2#21b73818ba96d9eea465b310b5bbc993%1726730120.212"
-  ],
-  "python_requires": [],
-  "config_requires": []
+    "version": "0.5",
+    "requires": [
+        "zlib/1.2.13",
+        "libxml2/2.11.4",
+        "gtest/1.14.0"
+    ],
+    "build_requires": [
+        "pkgconf/1.9.3",
+        "ninja/1.11.1",
+        "meson/1.0.0"
+    ],
+    "python_requires": [],
+    "config_requires": []
 }
