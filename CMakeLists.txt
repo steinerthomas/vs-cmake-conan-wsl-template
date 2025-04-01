@@ -7,14 +7,17 @@ find_package(libxml2 CONFIG REQUIRED)
 add_library(MyLib)
 
 set(HELLO_MESSAGE "Hello world from cmake!")
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Constants.gen.h.in ${CMAKE_CURRENT_SOURCE_DIR}/src/Constants.gen.h)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/src/Constants.gen.h.in ${CMAKE_CURRENT_SOURCE_DIR}/out/generated/Constants.gen.h)
 
 target_sources(MyLib
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src/MyLib.cpp
 )
 
-target_include_directories(MyLib PUBLIC include)
+target_include_directories(MyLib 
+    PUBLIC include
+    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/out/generated
+)
 
 target_link_libraries(MyLib
     PRIVATE
